@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
 :root{
     --color-1: #2f3240;
 }
@@ -62,16 +63,64 @@ a{
 }
 
 
+
 .header .logo,
 .header .nav{
     padding:0 15px;
 }
 .header .logo a{
     font-size: 30px;
-    color:#f3a93d;
+    color:#5e7412;
     text-transform: capitalize;
 	text-decoration: none;
 }
+
+@keyframes tipsy {
+  0 {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+.logo-text {
+  color: #000000;
+  text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: -3px;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  transform: translateX(-0%) translateY(-50%);
+}
+
+.logo-text:before,
+.logo-text:after {
+  content: '';
+  padding: .4em .6em;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  top: 50%;
+  display: block;
+  border: 3px solid rgb(130, 126, 126);
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  animation: 10s infinite alternate ease-in-out tipsy;
+}
+
+.logo-text:before {
+  border-color: #fbfbfb #ffffff rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  z-index: -1;
+}
+
+.logo-text:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ffffff #ffffff;
+  box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
+}
+
+
 .header .nav ul{
 	padding: 0px 0px;
 	margin: 0px;
@@ -228,22 +277,10 @@ a{
     height: 100vh;
     object-fit: cover;
     position: relative;
-    filter: brightness(40%);
+    filter: brightness(20%);
 }
 
-.square-box{
-  height: 300px;
-  width: 60px;
-  border: 14px solid rgba(244, 244, 244, 0.336);
-  padding: 20px;
-  background: transparent;
-  border-top-left-radius: 40px;
-  z-index: -10;
-}
-.square-box,.inner-square-box:hover{
-  border-top-left-radius: 0px;
-  border-bottom-right-radius: 60px;
-}
+
 .carousal-img-content-container{
     position: absolute;
     z-index: 10;
@@ -253,29 +290,30 @@ a{
     text-align: left;
 }
 .carousal-heading,.carousal-description{
-    color: white;
-    font-family:'Fira Sans', sans-serif;
-    font-style: oblique;
+    color: rgba(255, 255, 255, 0.704);
+    font-family:'Orbitron', sans-serif;
 
 }
+
 .carousal-heading{
-    font-size: 70px;
-    font-weight: 600;
+    font-size: 60px;
+    font-weight: 400;
     letter-spacing: 6px; 
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 .carousal-description{
     font-size: 20px;
     font-family: 'Fira Sans',sans-serif;
     padding-top: 30px;
-    font-weight: 400;
+    font-weight: 450;
 }
+
 .animate-charcter
 {
    text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
-    #231557 05%,
+    #ffffff 05%,
     grey 29%,
     #ffffff 67%,
     #ffffff 100%
@@ -288,7 +326,7 @@ a{
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 4s linear infinite;
+  animation: textclip 6s linear infinite;
   display: inline-block;
       
 }
@@ -496,7 +534,8 @@ a{
     padding: 25px;
     border: none;
     border-radius: 10px;
-    border: 1px solid black;
+    border: none;
+    box-shadow: 10px 10px 5px lightblue;
   }
     .services-card:hover{
     transform: translateY(-10px);
@@ -520,7 +559,7 @@ a{
     
   }
   .hover-1 {
-    background: linear-gradient(#1095c1 0 0) var(--p,0)/var(--p,0) no-repeat;
+    background: linear-gradient(#61bddbaa 0 0) var(--p,0)/var(--p,0) no-repeat;
     transition: .4s,background-position 0s;
   }
   .hover-1:hover {
@@ -530,7 +569,7 @@ a{
   
   .hover-2 {
     background: 
-      linear-gradient(#b210c1 0 0) no-repeat
+      linear-gradient(#b210c18d 0 0) no-repeat
        calc(200% - var(--p,0%)) 100% / 200% var(--p,.08em);
     transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
   }
@@ -541,7 +580,7 @@ a{
   }
   
   .hover-3 {
-    --c: no-repeat linear-gradient(#c18010 0 0);
+    --c: no-repeat linear-gradient(#c180109a 0 0);
     background: 
       var(--c)  calc(-101% + var(--p,0%)) 100%,
       var(--c)  calc( 201% - var(--p,0%)) 0;
@@ -554,7 +593,7 @@ a{
     color: black;
   }
   .hover-4 {
-    --c: #10c16b;
+    --c: #10c16b8d;
     line-height: 1.2em;
     background:
       conic-gradient(from -135deg at 100%  50%,var(--c) 90deg,#0000 0) 0    var(--p,0%),
@@ -613,7 +652,7 @@ a{
 /* ------------------about---------------- */
 
 #about{
-  background-color: #274078;
+  background-color: rgb(5, 70, 113)
 }
 .about-grid-container{
   display: grid;
@@ -782,7 +821,7 @@ a{
 @media screen and (max-width:1025px) {
 /*--------------home---------------*/
 .carousal-heading{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
     letter-spacing: 6px; 
 }
@@ -790,7 +829,6 @@ a{
     font-size: 15px;
     padding-top: 25px;
 }
-
 
 
 /*-------------projects-----------------*/
@@ -986,16 +1024,21 @@ letter-spacing: 10px;
 }
 
 @media  screen and (max-width:769px) {
-    /*--------------home---------------*/
-    .carousal-heading{
-        font-size: 40px;
-        font-weight: 600;
-        letter-spacing: 6px; 
-    }
-    .carousal-description{
-        font-size: 12px;
-        padding-top: 20px;
-    }
+/*--------------home---------------*/
+.carousal-heading{
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 3px; 
+}
+.carousal-description{
+    font-size: 16px;
+    padding-top: 10px;
+}
+.carousal-img-content-container{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 /*---------------services------------------*/
 /*----------services-------------*/
 .services-container{
@@ -1151,8 +1194,7 @@ html{
     overflow-x: scroll;
   }
   .services-container{
-  padding-left: 40px;
-  padding-right: 40px;
+  padding:10px;
   margin-top: 40px;
   margin-bottom: 40px;
   }

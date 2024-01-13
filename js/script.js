@@ -42,6 +42,7 @@ function changeBg()
 window.addEventListener('scroll', changeBg);
 
 
+
 //------------Projects counter----------->
 const counts = document.querySelectorAll('.count')
 const speed = 97
