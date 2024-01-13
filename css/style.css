@@ -180,6 +180,11 @@ a{
     margin-right: 15px;
 	z-index: 1;
 }
+.logo-text-span{
+  font-size: 20px;
+  color: white;
+  padding-left: 30px;
+}
 .nav-toggler:focus{
     outline: none;
     box-shadow: 0 0 15px rgba(255,255,255,0.5);
